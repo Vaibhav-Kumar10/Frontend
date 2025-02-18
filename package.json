@@ -7,8 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite preview"
   },
+
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
     "@shadcn/ui": "^0.0.4",
