@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 const defaultTimes = ["10:00 AM", "10:35 AM", "01:45 PM", "03:45 PM"];
 
@@ -8,7 +8,7 @@ const Reminder = () => {
   const [selectedTimes, setSelectedTimes] = useState([]);
   const [customTime, setCustomTime] = useState("");
   const [remindMe, setRemindMe] = useState(false);
-  
+
   const navigate = useNavigate(); // Hook for navigation
 
   const toggleTimeSelection = (time) => {
@@ -37,7 +37,8 @@ const Reminder = () => {
 
   const submitReminder = async () => {
     try {
-      await axios.post("http://localhost:5000/set-reminder", {
+      // await axios.post("http://localhost:5000/set-reminder", {
+      await axios.post("https://backend-hyv7.onrender.com/set-reminder", {
         remindMe,
         times: selectedTimes,
       });
@@ -51,7 +52,7 @@ const Reminder = () => {
     <div className="flex flex-col items-center min-h-screen p-4 bg-gray-100">
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6">
         {/* Back Button */}
-        <button 
+        <button
           className="text-lg font-semibold text-gray-600 mb-4"
           onClick={() => navigate("/dashboard")} // Navigates back to Dashboard
         >
@@ -63,7 +64,7 @@ const Reminder = () => {
           <h2 className="text-xl font-bold mt-2">Inhaler</h2>
           <p className="text-gray-500">Ongoing Medication • 3 puffs</p>
         </div>
-        
+
         <div className="flex items-center justify-between mt-6">
           <span className="text-lg font-semibold text-gray-700">Remind Me</span>
           <label className="relative inline-flex items-center cursor-pointer">

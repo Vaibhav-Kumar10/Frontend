@@ -57,13 +57,15 @@ const Dashboard = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://127.0.0.1:5000/send-data-to-ai/${userId}`
+        // `http://127.0.0.1:5000/send-data-to-ai/${userId}`
+        `https://backend-hyv7.onrender.com/send-data-to-ai/${userId}`
       );
       alert(`AI Response: ${response.data.message}`);
 
       // Fetch alerts after AI processing
       const alertResponse = await axios.get(
-        `http://127.0.0.1:5000/get-alerts/${userId}`
+        // `http://127.0.0.1:5000/get-alerts/${userId}`
+        `https://backend-hyv7.onrender.com/get-alerts/${userId}`
       );
       setAlerts(alertResponse.data.alerts);
       setShowModal(true); // Show alert modal

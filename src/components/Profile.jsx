@@ -41,7 +41,8 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:5000/save-profile", formData);
+      // const response = await axios.post("http://127.0.0.1:5000/save-profile", formData);
+      const response = await axios.post("https://backend-hyv7.onrender.com/save-profile", formData);
   
       if (response.data.user_id) {
         // ✅ Store user_id in local storage

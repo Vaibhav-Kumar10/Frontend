@@ -127,7 +127,8 @@ const Quiz = () => {
     console.log("Final stored answers:", storedAnswers); // Debugging step
 
     try {
-      const response = await axios.post("http://127.0.0.1:5000/submit-quiz", {
+      // const response = await axios.post("http://127.0.0.1:5000/submit-quiz", {
+      const response = await axios.post("https://backend-hyv7.onrender.com/submit-quiz", {
         user_id,
         answers: storedAnswers,
       });
